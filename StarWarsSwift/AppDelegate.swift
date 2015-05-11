@@ -15,6 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Valor por defecto para último personaje seleccionado
+//        var defaults = NSUserDefaults.standardUserDefaults()
+//        if let def: String = defaults.objectForKey(LAST_SELECTED_CHARACTER){
+//            
+//        }
+        
+        
+        
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
