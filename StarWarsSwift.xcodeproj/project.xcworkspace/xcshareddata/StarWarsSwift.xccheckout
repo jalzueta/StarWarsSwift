@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9A3232A9-B1FD-45A8-8B43-07DA80689E44</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>StarWarsSwift</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7BFC5936B3504F7673FA2F293994FDE989E90C73</key>
 		<string>https://github.com/jalzueta/StarWarsSwift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>StarWarsSwift.xcodeproj/project.xcworkspace</string>
+	<string>StarWarsSwift.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7BFC5936B3504F7673FA2F293994FDE989E90C73</key>

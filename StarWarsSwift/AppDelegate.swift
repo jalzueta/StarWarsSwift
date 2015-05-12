@@ -17,15 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Valor por defecto para último personaje seleccionado
-//        var defaults = NSUserDefaults.standardUserDefaults()
-//        if let def: String = defaults.objectForKey(LAST_SELECTED_CHARACTER){
-//            
-//        }
-        
-        
-        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let last: AnyObject? = defaults.objectForKey(LAST_SELECTED_CHARACTER)
+            
+        if let lastSelected: AnyObject = last {
+            
+        }else{
+            defaults.setObject([IMPERIAL_SECTION, 0], forKey: LAST_SELECTED_CHARACTER)
+            defaults.synchronize()
+        }
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        // Creamos un modelo
+        let universe: FLGStarWarsUniverse = FLGStarWarsUniverse()
+        
+        // Detectamos el tipo de pantalla
+        if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad{
+            // Tipo tableta
+            self.configureForIpad(universe)
+        }else{
+            // Tipo telefono
+            self.configureForIpad(universe)
+        }
+        
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
@@ -54,6 +69,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func configureForIpad(universe: FLGStarWarsUniverse){
+        // Creamos los controladores
+        let uVC = FLGUniverseTableViewController(model: universe)
+        let charVC = FLGCharacterViewController(model: self.lastSelectedCharacterInModel(universe))
+        
+        // Creamos los navigation
+        let uNav = UINavigationController(rootViewController: uVC)
+        let charNav = UINavigationController(rootViewController: charVC)
+        
+        // Creamos el combinador
+        let splitVC = UISplitViewController()
+        splitVC.viewControllers = [uNav, charNav]
+        
+        // Asignamos delegados
+        splitVC.delegate = charVC
+        uVC.delegate = charVC
+        
+        // Lo hago root
+        self.window?.rootViewController = splitVC
+    }
+    
+    func configureForIphone(model: FLGStarWarsUniverse){
+        
+    }
+    
+    func lastSelectedCharacterInModel(universe: FLGStarWarsUniverse) -> FLGStarWarsCharacter?{
+        // Obtengo NSUserDefaults
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        // Saco las coordenadas del ultimo personaje
+        if let coords: NSArray = defaults.objectForKey(LAST_SELECTED_CHARACTER) as? NSArray{
+            let section = coords.objectAtIndex(0).integerValue
+            let pos = coords.objectAtIndex(1).integerValue
+            
+            // Obtengo el personaje
+            var character: FLGStarWarsCharacter?
+            if section == IMPERIAL_SECTION{
+                character = universe.imperialAtIndex(pos)
+            }else{
+                character = universe.rebelAtIndex(pos)
+            }
+            return character
+        }
+        return FLGStarWarsCharacter(alias: nil, wikiURL: nil, soundData: nil, photo: nil)
+    }
 }
 

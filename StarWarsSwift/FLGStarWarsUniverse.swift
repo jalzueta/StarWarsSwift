@@ -14,16 +14,16 @@ class FLGStarWarsUniverse: NSObject {
     var rebels: NSMutableArray
     var imperials: NSMutableArray
     
-    var rebelCount: Int?{
+    var rebelCount: Int{
         get{
-            var count: Int? = self.rebels.count
+            var count: Int = self.rebels.count
             return count
         }
     }
     
-    var imperialCount: Int?{
+    var imperialCount: Int{
         get{
-            var count: Int? = self.imperials.count
+            var count: Int = self.imperials.count
             return count
         }
     }

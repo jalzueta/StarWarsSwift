@@ -31,6 +31,9 @@
 		597C93B41B011CCC00487180 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 597C93A41B011CCC00487180 /* yoda.caf */; };
 		597C93B51B011CCC00487180 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 597C93A51B011CCC00487180 /* yoda.jpg */; };
 		597C93BD1B011FAA00487180 /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 597C93BC1B011FAA00487180 /* CafPlayer.m */; };
+		597C93C11B01207600487180 /* FLGCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C93BF1B01207600487180 /* FLGCharacterViewController.swift */; };
+		597C93C21B01207600487180 /* FLGCharacterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597C93C01B01207600487180 /* FLGCharacterViewController.xib */; };
+		597C94041B02AD6F00487180 /* FLGUniverseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597C94031B02AD6F00487180 /* FLGUniverseTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		597C93BA1B011FA900487180 /* StarWarsSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StarWarsSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		597C93BB1B011FAA00487180 /* CafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafPlayer.h; sourceTree = "<group>"; };
 		597C93BC1B011FAA00487180 /* CafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafPlayer.m; sourceTree = "<group>"; };
+		597C93BF1B01207600487180 /* FLGCharacterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLGCharacterViewController.swift; sourceTree = "<group>"; };
+		597C93C01B01207600487180 /* FLGCharacterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGCharacterViewController.xib; sourceTree = "<group>"; };
+		597C94031B02AD6F00487180 /* FLGUniverseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FLGUniverseTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 				597C93721B00F89100487180 /* AppDelegate.swift */,
 				597C93B61B011CD200487180 /* Resources */,
 				597C93931B00FEAC00487180 /* Models */,
+				597C93BE1B01205400487180 /* Controllers */,
 				597C93741B00F89100487180 /* Images.xcassets */,
 				597C93761B00F89100487180 /* LaunchScreen.xib */,
 				597C93701B00F89100487180 /* Supporting Files */,
@@ -192,6 +199,16 @@
 				597C93BA1B011FA900487180 /* StarWarsSwift-Bridging-Header.h */,
 			);
 			name = Sound;
+			sourceTree = "<group>";
+		};
+		597C93BE1B01205400487180 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				597C93BF1B01207600487180 /* FLGCharacterViewController.swift */,
+				597C93C01B01207600487180 /* FLGCharacterViewController.xib */,
+				597C94031B02AD6F00487180 /* FLGUniverseTableViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +294,7 @@
 				597C93AE1B011CCC00487180 /* palpatine.jpg in Resources */,
 				597C93A81B011CCC00487180 /* chewbacca.caf in Resources */,
 				597C93AC1B011CCC00487180 /* iconSmall.png in Resources */,
+				597C93C21B01207600487180 /* FLGCharacterViewController.xib in Resources */,
 				597C93B31B011CCC00487180 /* vader.caf in Resources */,
 				597C93B51B011CCC00487180 /* yoda.jpg in Resources */,
 				597C93B41B011CCC00487180 /* yoda.caf in Resources */,
@@ -311,7 +329,9 @@
 			files = (
 				597C93901B00FCAD00487180 /* Settings.swift in Sources */,
 				597C93951B01028C00487180 /* FLGStarWarsUniverse.swift in Sources */,
+				597C93C11B01207600487180 /* FLGCharacterViewController.swift in Sources */,
 				597C93921B00FEA600487180 /* FLGStarWarsCharacter.swift in Sources */,
+				597C94041B02AD6F00487180 /* FLGUniverseTableViewController.swift in Sources */,
 				597C93731B00F89100487180 /* AppDelegate.swift in Sources */,
 				597C93BD1B011FAA00487180 /* CafPlayer.m in Sources */,
 			);
@@ -438,6 +458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StarWarsSwift/StarWarsSwift-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -450,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "StarWarsSwift/StarWarsSwift-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -506,6 +528,7 @@
 				597C93891B00F89100487180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		597C938A1B00F89100487180 /* Build configuration list for PBXNativeTarget "StarWarsSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +537,7 @@
 				597C938C1B00F89100487180 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

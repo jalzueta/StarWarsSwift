@@ -33,5 +33,4 @@ class FLGStarWarsCharacter: NSObject {
         self.soundData = soundData
         self.photo = photo
     }
-    
 }
