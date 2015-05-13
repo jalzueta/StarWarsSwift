@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StarWarsSwift/FLGCharacterViewController.swift"
-            timestampString = "453248920.959429"
+            timestampString = "453249583.387366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "FLGCharacterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,17 +74,17 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StarWarsSwift/FLGCharacterViewController.swift"
-            timestampString = "453248920.959429"
+            timestampString = "453249583.387366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160">
+            startingLineNumber = "142"
+            endingLineNumber = "142">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
