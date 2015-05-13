@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Foundation
+import AVFoundation
 
 class FLGCharacterViewController: UIViewController, UISplitViewControllerDelegate, FLGUniverseTableViewControllerDelegate {
     
     var model: FLGStarWarsCharacter?
+    var cafPlayer: CafPlayer?
     @IBOutlet weak var photoView: UIImageView!
     
     convenience init(model: FLGStarWarsCharacter?){
@@ -44,10 +47,12 @@ class FLGCharacterViewController: UIViewController, UISplitViewControllerDelegat
     // MARK: - Actions
     @IBAction func playSound(sender: UIBarButtonItem){
         if let miModel = self.model,
-            let player: AnyObject = CafPlayer.cafPlayer(),
             let soundData = miModel.soundData{
-                player.playSoundData(soundData)
-        }
+                cafPlayer = CafPlayer.cafPlayer() as? CafPlayer
+                if let player = cafPlayer{
+                    player.playSoundData(soundData)
+                }
+        }        
     }
     
     @IBAction func displayWiki(sender: UIBarButtonItem){
