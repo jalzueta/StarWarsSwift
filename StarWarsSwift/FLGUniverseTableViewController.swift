@@ -16,15 +16,7 @@ class FLGUniverseTableViewController: UITableViewController, FLGUniverseTableVie
 
     var model: FLGStarWarsUniverse?
     var delegate: FLGUniverseTableViewControllerDelegate?
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
+        
     convenience init(model: FLGStarWarsUniverse?){
         self.init(nibName: nil, bundle: nil)
         self.model = model

@@ -2,7 +2,7 @@
 //  FLGCharacterViewController.swift
 //  StarWarsSwift
 //
-//  Created by Javi Alzueta on 11/5/15.
+//  Created by Javi Alzueta on 13/5/15.
 //  Copyright (c) 2015 FillinGAPPs. All rights reserved.
 //
 
@@ -13,24 +13,14 @@ class FLGCharacterViewController: UIViewController, UISplitViewControllerDelegat
     var model: FLGStarWarsCharacter?
     @IBOutlet weak var photoView: UIImageView!
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
-        photoView = UIImageView()
-        super.init(nibName: nil, bundle: nil)
-    }
-    
     convenience init(model: FLGStarWarsCharacter?){
-        self.init(nibName: nil, bundle: nil)
+        self.init(nibName: "FLGCharacterViewController", bundle: nil)
         self.model = model
-        self.title = model?.alias
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -45,7 +35,7 @@ class FLGCharacterViewController: UIViewController, UISplitViewControllerDelegat
         // Si estoy dentro de un SplitVC me pongo el botón
         self.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,14 +43,20 @@ class FLGCharacterViewController: UIViewController, UISplitViewControllerDelegat
     
     // MARK: - Actions
     @IBAction func playSound(sender: UIBarButtonItem){
-        if let player: AnyObject = CafPlayer.cafPlayer(),
-            let soundData = self.model?.soundData{
+        if let miModel = self.model,
+            let player: AnyObject = CafPlayer.cafPlayer(),
+            let soundData = miModel.soundData{
                 player.playSoundData(soundData)
         }
     }
     
     @IBAction func displayWiki(sender: UIBarButtonItem){
         
+        // Crear un WikiVC
+        let wVC = FLGWikiViewController(model: model)
+        
+        // Hacer un push
+        self.navigationController?.pushViewController(wVC, animated: true)
     }
     
     // MARK: - UISplitViewControllerDelegate
@@ -88,10 +84,10 @@ class FLGCharacterViewController: UIViewController, UISplitViewControllerDelegat
         if let myModel = self.model{
             self.title = myModel.alias
             if let photo = myModel.photo{
-//                self.photoView.image = photo
+                photoView.image = photo
             }
         }
     }
     
-
+    
 }

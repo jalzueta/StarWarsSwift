@@ -6,40 +6,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FLGCharacterViewController" customModule="StarWarsSwift" customModuleProvider="target">
             <connections>
-                <outlet property="photoView" destination="Kxi-Pz-OqT" id="GQJ-1N-3hy"/>
-                <outlet property="view" destination="pSM-on-lsZ" id="YiD-Ie-Q9z"/>
+                <outlet property="photoView" destination="OFu-hg-Bke" id="Lbw-iO-bs4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pSM-on-lsZ">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kxi-Pz-OqT">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.0549360895" green="0.49182061459999998" blue="0.078231994060000004" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="vO9-6u-xfG">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="P4w-rM-GuX">
                     <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <items>
-                        <barButtonItem systemItem="play" id="BtI-9A-rqV">
+                        <barButtonItem systemItem="play" id="rns-HA-bv9">
                             <connections>
-                                <action selector="playSound:" destination="-1" id="H9f-8u-jAG"/>
+                                <action selector="playSound:" destination="-1" id="Dfz-Ik-GQQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="3mE-kV-Ycq"/>
-                        <barButtonItem title="Wiki" id="A5J-Ck-gkb">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OAS-oM-Rpe"/>
+                        <barButtonItem title="Wiki" id="WRD-Ol-zP6">
                             <connections>
-                                <action selector="displayWiki:" destination="-1" id="WHl-Hm-O7D"/>
+                                <action selector="displayWiki:" destination="-1" id="7RI-7f-loY"/>
                             </connections>
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="OFu-hg-Bke">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="328" y="377"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="414" y="461"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

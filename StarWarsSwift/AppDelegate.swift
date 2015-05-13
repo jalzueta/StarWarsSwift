@@ -35,10 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Detectamos el tipo de pantalla
         if UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad{
             // Tipo tableta
-            self.configureForIpad(universe)
+            self.configureForPad(universe)
         }else{
             // Tipo telefono
-            self.configureForIpad(universe)
+            self.configureForPhone(universe)
         }
         
         // Override point for customization after application launch.
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    func configureForIpad(universe: FLGStarWarsUniverse){
+    func configureForPad(universe: FLGStarWarsUniverse){
         // Creamos los controladores
         let uVC = FLGUniverseTableViewController(model: universe)
         let charVC = FLGCharacterViewController(model: self.lastSelectedCharacterInModel(universe))
@@ -90,8 +90,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = splitVC
     }
     
-    func configureForIphone(model: FLGStarWarsUniverse){
+    func configureForPhone(universe: FLGStarWarsUniverse){
+        // Creamos el controlador
+        let uVC = FLGUniverseTableViewController(model: universe)
         
+        // Creamos el combinador
+        let uNav = UINavigationController(rootViewController: uVC)
+        
+        // Asignamos delegados
+        uVC.delegate = uVC
+        
+        // Lo hago root
+        self.window?.rootViewController = uNav
     }
     
     func lastSelectedCharacterInModel(universe: FLGStarWarsUniverse) -> FLGStarWarsCharacter?{
